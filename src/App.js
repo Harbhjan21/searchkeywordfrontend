@@ -104,34 +104,38 @@ function App() {
         }}
       >
         <h2>Search Results:</h2>
-        <table
-          style={{ border: "2px solid black", borderCollapse: "collapse" }}
-        >
-          <thead>
-            <tr>
-              <th style={{ border: "2px solid black" }}>Document Name</th>
-              <th style={{ border: "2px solid black" }}>Sentence</th>
-            </tr>
-          </thead>
-          {results?.length > 0 ? (
-            <tbody>
-              {results.map((result, index) => (
-                <tr key={index}>
-                  <td style={{ border: "2px solid black" }}>
-                    {result.filename}
-                  </td>
-                  {result.sentence.map((item) => {
-                    return (
-                      <td style={{ border: "2px solid black" }}>{item}</td>
-                    );
-                  })}
-                </tr>
-              ))}
-            </tbody>
-          ) : (
-            <b>(not found)</b>
-          )}
-        </table>
+        {files.length == 0 ? (
+          <b>Please upload file</b>
+        ) : (
+          <table
+            style={{ border: "2px solid black", borderCollapse: "collapse" }}
+          >
+            <thead>
+              <tr>
+                <th style={{ border: "2px solid black" }}>Document Name</th>
+                <th style={{ border: "2px solid black" }}>Sentence</th>
+              </tr>
+            </thead>
+            {results?.length > 0 ? (
+              <tbody>
+                {results.map((result, index) => (
+                  <tr key={index}>
+                    <td style={{ border: "2px solid black" }}>
+                      {result.filename}
+                    </td>
+                    {result.sentence.map((item) => {
+                      return (
+                        <td style={{ border: "2px solid black" }}>{item}</td>
+                      );
+                    })}
+                  </tr>
+                ))}
+              </tbody>
+            ) : (
+              <b>(not found)</b>
+            )}
+          </table>
+        )}
       </div>
     </div>
   );
