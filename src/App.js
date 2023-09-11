@@ -31,7 +31,7 @@ function App() {
 
     try {
       const response = await axios.post(
-        "https://searchkeywordbackend.vercel.app/uploads",
+        "http://localhost:5000/uploads",
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },
@@ -79,7 +79,7 @@ function App() {
           <div style={{ marginTop: 10 }}>
             <input
               type="text"
-              placeholder="Enter keywords"
+              placeholder="Enter keywords (separated by spaces or commas)"
               value={keywords}
               onChange={handleKeywordsChange}
             />
