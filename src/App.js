@@ -31,7 +31,7 @@ function App() {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/uploads",
+        "https://searchkeywordbackend.vercel.app/uploads",
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },
